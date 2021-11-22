@@ -1,3 +1,17 @@
+$secondary-300: #F7E4BB;
+$additional-1-700: #798F24;
+$additional-2-500: #4A9C5B;
+$primary-200: #74D7D3;
+$primary-400: #32AFA9;
+$additional-1-600: #9CB82E;
+$secondary-600: #E6AF33;
+$secondary-500: #EBC060;
+$additional-2-300: #86C693;
+$black: #000000;
+$white: #FFFFFF;
+$white: #FFFFFF;
+$white: #FFFFFF;
+
 *,
 *:before,
 *:after {
@@ -7,10 +21,10 @@
 }
 
 body {
-  font-family: 'Montserrat', 'Arial', sans-serif,'Open Sans - Semi Bold';
+  font-family: 'Montserrat', 'Arial', sans-serif, 'Open Sans - Semi Bold';
   font-size: 14px;
   line-height: 1.2;
-  color: #000000;
+  color: $black;
 }
 
 h1 {
@@ -27,12 +41,10 @@ h1 {
   display: flex;
 }
 
-//sidebar
-
 .sidebar {
-  order:-1;
+  order: -1;
   width: 200px;
-  background: #F7E4BB;
+  background: $secondary-300;
   padding: 60px 10px;
   transition-duration: 500ms;
   transform: translateX(-50%);
@@ -49,30 +61,32 @@ h1 {
     }
 
   }
+
   .nav {
     display: flex;
     flex-direction: column;
+
     .nav-menu-element {
       margin-bottom: 70px;
       display: flex;
       justify-content: space-between;
-      @media screen and (min-width: 320px) {
-        font-size: 32px;
+
+      div {
+        font-size: 16px;
+        color: black;
+        width: 50px;
+        word-wrap: break-word;
+        margin: auto 0;
+        transition-duration: 500ms;
+        transform: translateX(-200%);
       }
-     div{
-       font-size: 16px;
-       color: black;
-       width: 50px;
-       word-wrap: break-word;
-       margin: auto 0;
-       transition-duration: 500ms;
-       transform: translateX(-200%);
-     }
+
       img {
         padding: 30px 30px 30px 30px;
         border-radius: 30px 0 0 30px;
         margin-left: 57px;
         transition: background 9999999s;
+
         &:active {
           background: white;
           transition: background 0s;
@@ -81,8 +95,6 @@ h1 {
     }
   }
 }
-
-//main
 
 .content {
   display: flex;
@@ -103,29 +115,31 @@ h1 {
   @media screen and (max-width: 992px) {
     margin-bottom: 50px;
   }
-  .add-recipes{
+
+  .add-recipes {
     display: flex;
     margin-bottom: 30px;
     justify-content: space-between;
     width: 100%;
+
     h1 {
       font-weight: bold;
       font-size: 36px;
       line-height: 44px;
-      color: #EBC060;
+      color: $secondary-500;
+
     }
-    @media (min-width: 320px){
-      h1 {
-        font-size: 50px;
-      }
-    }
+
     .add-recipes-text {
+      border: none;
+      background: inherit;
       font-size: 24px;
       line-height: 29px;
-      color: #E6AF33;
+      color: $secondary-600;
       position: relative;
     }
-    .add-recipes-text::before{
+
+    .add-recipes-text::before {
       content: '+';
       display: flex;
       align-items: center;
@@ -136,9 +150,9 @@ h1 {
       left: -30%;
       position: absolute;
       border-radius: 30px;
-      width:30px;
+      width: 30px;
       height: 30px;
-      background: #E6AF33;
+      background: $secondary-600;
     }
   }
 }
@@ -147,17 +161,18 @@ h1 {
   margin-top: 30px;
   margin-bottom: 22px;
   width: 100%;
-  h1 {
+
+  .search-input {
+    text-transform: uppercase;
     font-size: 36px;
     margin-bottom: 40px;
     line-height: 44px;
-    color: rgba(0, 0, 0, 0.3);
+    outline: none;
+    border: none;
+    color: #0000004D;
+    opacity: 30%;
+    font-weight: normal;
     margin-bottom: 22px;
-  }
-  @media (min-width: 320px){
-    h1 {
-      font-size: 50px;
-    }
   }
 }
 
@@ -167,115 +182,105 @@ h1 {
   @media screen and (max-width: 1580px) {
     justify-content: space-between;
   }
-  //@media screen and (max-width: 320px) {
-  //  flex-direction: column;
-  //}
-
 
   .recipe-card {
-    margin:22px 60px 22px 0;
+    margin: 22px 60px 22px 0;
     position: relative;
     @media screen and (max-width: 1580px) {
-      margin:22px 0 22px 0;
+      margin: 22px 0 22px 0;
     }
+
     .recipe-card-info {
       width: 60%;
       position: absolute;
       top: 60%;
       left: 5%;
       display: flex;
+      flex-direction: column;
       flex-wrap: wrap;
       justify-content: space-between;
+
       .recipe-card-cat {
+        display: flex;
+      }
+
+      .recipe-card-cat-item {
         width: 72px;
+        margin-right: 20px;
         padding: 15px;
-        background: #E6AF33;
+        background: $secondary-600;
         border-radius: 30px;
         margin-bottom: 10px;
-      }
-      .recipe-card-cat:nth-child(2) {
-        width: 100px;
       }
       .recipe-card-name {
         font-size: 18px;
         line-height: 22px;
-        color: #FFFFFF;
+        color: $white;
       }
     }
   }
 }
 
-//320 568 668 992 1440
-
-
-.explore-recipes{
+.explore-recipes {
   display: flex;
   flex-direction: column;
-  flex:1;
+  flex: 1;
   width: 100%;
+
   h1 {
     font-weight: 500;
     font-size: 36px;
     line-height: 44px;
-    color: #9CB82E;
+    color: $additional-1-600;
   }
-  @media (min-width: 320px){
-    h1 {
-      font-size: 50px;
-    }
+
   }
+
   .recipes-cats {
     display: flex;
     margin: 30px 0;
+
     .cat-item {
       width: 72px;
       padding: 15px;
-      background: #E6AF33;
+      background: $secondary-600;
       border-radius: 30px;
-      margin:0 12px 10px 0;
+      margin: 0 12px 10px 0;
     }
-    div:nth-child(1) {
-      width: 100px;
-      background: #32AFA9;
+    .cat-item-primary-400 {
+      background: $primary-400;
     }
-    div:nth-child(2) {
-      width: 65px;
-      background: #EBC060;
+    .cat-item-secondary-500 {
+      background: $secondary-500;
     }
-    div:nth-child(3) {
-      width: 91px;
-      background: #86C693;
+    .cat-item-additional-2-300 {
+      background: $additional-2-300;
     }
-    div:nth-child(4) {
-      width: 91px;
-      background: #74D7D3;
+    .cat-item-primary-200 {
+      background: $primary-200;
     }
-    div:nth-child(5) {
-      width: 69px;
-      background: #4A9C5B;
+    .cat-item-additional-2-500 {
+      background: $additional-2-500;
     }
-    div:nth-child(6) {
-      width: 72px;
-      background: #E6AF33;
+    .cat-item-secondary-600 {
+      background: $secondary-600;
     }
-    div:nth-child(7) {
-      width: 63px;
-      background: #798F24;
+    .cat-item-additional-1-700 {
+      background: $additional-1-700;
     }
-    div:nth-child(8) {
-      width: 79px;
-      background: #74D7D3;
+    .cat-item-primary-200 {
+      background: $primary-200;
     }
   }
-}
+
 
 .receipt-compound-wrapper {
   position: relative;
   overflow: hidden;
   max-width: 423px;
   max-height: 780px;
-  background: url(../assets/images/b1.png) no-repeat top;
-  background-color: #F7E4BB;
+  background: url(../assets/images/dish-5.png) no-repeat top;
+  background-color: $secondary-300;
   border-radius: 30px;
   display: flex;
   flex: 1;
@@ -283,6 +288,7 @@ h1 {
   @media screen and (min-width: 992px) {
     margin-bottom: 50px;
   }
+
   .receipt-bookmark-icon {
     display: flex;
     align-items: center;
@@ -296,40 +302,48 @@ h1 {
     border-radius: 30px;
     background-color: rgba(240, 207, 133, 1);
   }
+
   .receipt-compound {
     padding: 30px 30px;
     margin: 30px;
     border-radius: 30px;
     background-color: white;
+
     h2 {
       font-size: 24px;
       line-height: 29.26px;
       margin-bottom: 15px;
     }
+
     .receipt-description {
       font-size: 18px;
       color: rgba(0, 0, 0, 0.44);
       line-height: 21.94px;
     }
+
     .receipt-ingredients {
       margin-top: 30px;
-      h2{
+
+      h2 {
         font-size: 18px;
         line-height: 21.94px;
         color: rgba(0, 0, 0, 1);
       }
+
       .ingredient-item {
         margin: 15px 0;
         display: flex;
         justify-content: space-between;
         align-items: center;
+
         .ingredient-item-name {
           margin-right: 40%;
         }
       }
+
       .ingredient-button {
         width: 300px;
-        background: #32AFA9;
+        background: $primary-400;
         border: 0;
         border-radius: 30px;
         padding: 15px 0;
@@ -340,16 +354,9 @@ h1 {
       }
     }
   }
+
   @media screen and (min-width: 992px) {
     flex: 1;
     height: 780px;
   }
 }
-
-
-
-
-
-
-
-
