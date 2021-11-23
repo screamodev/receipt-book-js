@@ -1,12 +1,17 @@
 .sidebar {
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
   order: -1;
   width: 200px;
   background: $secondary-300;
   padding: 60px 10px;
   transition-duration: 500ms;
   transform: translateX(-50%);
+
   &:hover {
     transform: translateX(0%);
+
     .nav {
       .nav-menu-element {
         div {
@@ -14,7 +19,6 @@
         }
       }
     }
-
   }
 
   .nav {
