@@ -1,0 +1,173 @@
+.food-page {
+  display: flex;
+  flex-direction: column;
+  flex: 2;
+  padding: 0 30px;
+  overflow: hidden;
+  @media screen and (max-width: 992px) {
+    margin-bottom: 50px;
+  }
+
+  .add-recipes {
+    display: flex;
+    margin-bottom: 30px;
+    justify-content: space-between;
+    width: 100%;
+    h1 {
+      font-weight: bold;
+      font-size: 36px;
+      line-height: 44px;
+      color: $secondary-500;
+
+    }
+
+    .add-recipes-text {
+      border: none;
+      background: inherit;
+      font-size: 24px;
+      line-height: 29px;
+      color: $secondary-600;
+      position: relative;
+    }
+
+    .add-recipes-text::before {
+      content: '+';
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      font-weight: bold;
+      color: white;
+      left: -30%;
+      position: absolute;
+      border-radius: 30px;
+      width: 30px;
+      height: 30px;
+      background: $secondary-600;
+    }
+  }
+}
+
+.search-recipes {
+  margin-top: 30px;
+  margin-bottom: 22px;
+  width: 100%;
+
+  .search-input {
+    text-transform: uppercase;
+    font-size: 36px;
+    margin-bottom: 40px;
+    line-height: 44px;
+    outline: none;
+    border: none;
+    color: #0000004D;
+    opacity: 30%;
+    font-weight: normal;
+    margin-bottom: 22px;
+  }
+}
+
+.recipes-cards {
+  display: flex;
+  flex-wrap: wrap;
+  @media screen and (max-width: 1580px) {
+    justify-content: space-between;
+  }
+
+  .recipe-card {
+    margin: 22px 60px 22px 0;
+    position: relative;
+    @media screen and (max-width: 1580px) {
+      margin: 22px 0 22px 0;
+    }
+
+    .recipe-card-info {
+      width: 60%;
+      position: absolute;
+      top: 60%;
+      left: 5%;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      .recipe-card-cat {
+        display: flex;
+      }
+
+      .recipe-card-cat-item {
+        width: 72px;
+        margin-right: 20px;
+        padding: 15px;
+        background: $secondary-600;
+        border-radius: 30px;
+        margin-bottom: 10px;
+      }
+
+      .recipe-card-name {
+        font-size: 18px;
+        line-height: 22px;
+        color: $white;
+      }
+    }
+  }
+}
+
+.explore-recipes {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+
+  h1 {
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 44px;
+    color: $additional-1-600;
+  }
+}
+
+.recipes-cats {
+  display: flex;
+  margin: 30px 0;
+
+  .cat-item {
+    width: 72px;
+    padding: 15px;
+    background: $secondary-600;
+    border-radius: 30px;
+    margin: 0 12px 10px 0;
+  }
+
+  .cat-item-primary-400 {
+    background: $primary-400;
+  }
+
+  .cat-item-secondary-500 {
+    background: $secondary-500;
+  }
+
+  .cat-item-additional-2-300 {
+    background: $additional-2-300;
+  }
+
+  .cat-item-primary-200 {
+    background: $primary-200;
+  }
+
+  .cat-item-additional-2-500 {
+    background: $additional-2-500;
+  }
+
+  .cat-item-secondary-600 {
+    background: $secondary-600;
+  }
+
+  .cat-item-additional-1-700 {
+    background: $additional-1-700;
+  }
+
+  .cat-item-primary-200 {
+    background: $primary-200;
+  }
+}

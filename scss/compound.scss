@@ -1,0 +1,85 @@
+.receipt-compound-wrapper {
+  position: relative;
+  overflow: hidden;
+  max-width: 423px;
+  max-height: 780px;
+  background: url(../assets/images/dish-5.png) no-repeat top;
+  background-color: $secondary-300;
+  border-radius: 30px;
+  display: flex;
+  flex: 1;
+  align-items: end;
+  @media screen and (min-width: 992px) {
+    margin-bottom: 50px;
+  }
+
+  .receipt-bookmark-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px;
+    position: absolute;
+    top: 0;
+    left: 75%;
+    width: 40px;
+    height: 40px;
+    border-radius: 30px;
+    background-color: rgba(240, 207, 133, 1);
+  }
+
+  .receipt-compound {
+    padding: 30px 30px;
+    margin: 30px;
+    border-radius: 30px;
+    background-color: white;
+    h2 {
+      font-size: 24px;
+      line-height: 29.26px;
+      margin-bottom: 15px;
+    }
+
+    .receipt-description {
+      font-size: 18px;
+      color: rgba(0, 0, 0, 0.44);
+      line-height: 21.94px;
+    }
+
+    .receipt-ingredients {
+      margin-top: 30px;
+
+      h2 {
+        font-size: 18px;
+        line-height: 21.94px;
+        color: rgba(0, 0, 0, 1);
+      }
+
+      .ingredient-item {
+        margin: 15px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .ingredient-item-name {
+          margin-right: 40%;
+        }
+      }
+
+      .ingredient-button {
+        width: 300px;
+        background: $primary-400;
+        border: 0;
+        border-radius: 30px;
+        padding: 15px 0;
+        text-align: center;
+        color: white;
+        font-size: 24px;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    flex: 1;
+    height: 780px;
+  }
+}
