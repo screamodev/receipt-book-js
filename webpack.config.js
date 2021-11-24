@@ -1,16 +1,16 @@
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require("path")
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-    mode: 'development',
-    entry: './src/index.js',
+    mode: "development",
+    entry: "./src/index.js",
     output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js',
+        path: path.resolve(__dirname, "dist"),
+        filename: "bundle.js",
         publicPath: "/",
         clean: true,
     },
-    plugins: [new HtmlWebpackPlugin({template: 'public/index.html'})],
+    plugins: [new HtmlWebpackPlugin({template: "public/index.html"})],
     module: {
         rules: [
             {
@@ -27,13 +27,13 @@ module.exports = {
             },
             {
                 test: /\.(png|svg|jpg)$/,
-                type: 'asset',
+                type: "asset",
             },
         ],
     },
     devServer: {
         static: {
-            directory: path.join(__dirname, 'dist'),
+            directory: path.join(__dirname, "dist"),
         },
     },
 };
