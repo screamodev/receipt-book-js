@@ -9,7 +9,8 @@
   "scripts": {
     "build": "webpack",
     "serve": "webpack serve --open",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "json-server": "json-server --watch db.json"
   },
   "repository": {
     "type": "git",
