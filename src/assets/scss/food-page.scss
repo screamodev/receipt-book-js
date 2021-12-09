@@ -60,57 +60,10 @@
     line-height: 44px;
     outline: none;
     border: none;
-    color: #0000004D;
+    color: #0000004d;
     opacity: 30%;
     font-weight: normal;
     margin-bottom: 22px;
-  }
-}
-
-.recipes-cards {
-  display: flex;
-  flex-wrap: wrap;
-  @media screen and (max-width: 1580px) {
-    justify-content: space-between;
-  }
-
-  .recipe-card {
-    margin: 22px 60px 22px 0;
-    border-radius: 30px;
-    overflow: hidden;
-    position: relative;
-    @media screen and (max-width: 1580px) {
-      margin: 22px 0 22px 0;
-    }
-
-    .recipe-card-info {
-      width: 60%;
-      position: absolute;
-      top: 60%;
-      left: 5%;
-      display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
-      justify-content: space-between;
-
-      .recipe-card-cat {
-        display: flex;
-      }
-
-      .recipe-card-cat-item {
-        margin-right: 20px;
-        padding: 10px;
-        background: $secondary-600;
-        border-radius: 30px;
-        margin-bottom: 10px;
-      }
-
-      .recipe-card-name {
-        font-size: 18px;
-        line-height: 22px;
-        color: $white;
-      }
-    }
   }
 }
 

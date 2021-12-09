@@ -1,4 +1,5 @@
-import { createElement } from '../../libs/DOM';
+import { createElement } from '../../../libs/DOM';
+import './recipeCard.scss';
 
 const RecipeCard = ({ imgUrl, name, categories }) =>
   createElement('div', { class: 'recipe-card' }, [
