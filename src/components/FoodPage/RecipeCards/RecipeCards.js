@@ -1,5 +1,5 @@
 import { createElement } from '../../libs/DOM';
-import RecipeCard from './RecipeCard';
+import RecipeCard from '../RecipeCard';
 
 const RecipeCards = ({ recipes }) =>
   createElement(
