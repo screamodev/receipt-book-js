@@ -1,0 +1,105 @@
+@import '../../../../assets/scss/variables';
+
+#add-recipe-modal-window {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+
+  .add-recipe-modal-window-content {
+    background-color: $secondary-300;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 30px;
+    border: 2px solid grey;
+    width: 25%;
+    z-index: 2000;
+    text-align: center;
+  }
+
+  .add-recipe-modal-window-close-holder {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    padding: 15px;
+
+    .add-recipe-modal-window-close {
+      padding: 0 10px;
+      color: black;
+      font-size: 24px;
+      font-weight: bold;
+      cursor: pointer;
+      border: 1px solid grey;
+      border-radius: 30px;
+      transition: background-color 0.5s, color 0.5s;
+
+      &:hover {
+        background-color: darkred;
+        color: white;
+      }
+    }
+  }
+
+  .add-recipe-form {
+    .add-recipe-form-input {
+      display: block;
+      width: 100%;
+      border-radius: 20px;
+      font-size: 18px;
+      padding: 10px;
+      margin-bottom: 40px;
+      border: none;
+      border-bottom: 3px solid black;
+      min-width: 250px;
+      outline: none;
+      color: black;
+      font-family: inherit;
+
+      &:focus {
+        border-bottom: 3px solid $secondary-500;
+      }
+    }
+
+    .add-recipe-form-ingredients-holder {
+      margin-bottom: 40px;
+      display: flex;
+      justify-content: space-around;
+
+      .add-recipe-form-ingredients-input {
+        padding: 10px;
+        width: 60px;
+        border-radius: 20px;
+        outline: none;
+        border: none;
+        border-bottom: 3px solid black;
+
+        &:focus {
+          border-bottom: 3px solid $secondary-500;
+        }
+      }
+    }
+
+    .add-recipe-form-button {
+      width: 300px;
+      background: $primary-400;
+      border: 0;
+      border-radius: 30px;
+      padding: 15px 0;
+      text-align: center;
+      color: white;
+      font-size: 24px;
+      text-transform: uppercase;
+      opacity: 0.7;
+      transition-duration: 500ms;
+    }
+
+    .add-recipe-form-button:hover {
+      opacity: 1;
+    }
+  }
+}
