@@ -4,7 +4,7 @@ const createElement = (tag, attributes = {}, children = null) => {
   if (attributes && typeof attributes === 'object') {
     Object.entries(attributes).forEach(([key, value]) => {
       if (typeof value === 'function') {
-        domElement[key] = attributes[key];
+        domElement[key] = value;
       } else {
         domElement.setAttribute(key, value);
       }
