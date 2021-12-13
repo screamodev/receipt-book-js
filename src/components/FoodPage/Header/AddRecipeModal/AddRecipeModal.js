@@ -1,30 +1,29 @@
-import { createElement } from '../../../../libs/DOM';
+import { createElement, mount } from '../../../../libs/DOM';
+import IngredientInputs from './IngredientInputs';
 import './addRecipeModal.scss';
+import FormInput from '../../../common/FormInput';
+import FormTextarea from '../../../common/FormTextarea';
 
 const AddRecipeModal = () => {
   const closeModal = () => {
-    document.getElementById('add-recipe-modal-window').style.display = 'none';
+    const modal = document.getElementById('add-recipe-modal-window');
+    modal.style.display = 'none';
   };
 
   const addInputs = () => {
-    document.getElementById('add-recipe-form-ingredients-holder').append(
-      createElement(
-        'li',
-        {
-          class: 'add-recipe-form-ingredients-element',
-        },
-        [
-          createElement('input', {
-            class: 'add-recipe-form-ingredients-input',
-            placeholder: 'name',
-          }),
-          createElement('input', {
-            class: 'add-recipe-form-ingredients-input',
-            placeholder: `pc's`,
-          }),
-        ]
-      )
+    mount(
+      document.getElementById('add-recipe-form-ingredients-list'),
+      IngredientInputs()
     );
+  };
+
+  const removeInputs = () => {
+    const list = document.getElementById('add-recipe-form-ingredients-list');
+    list.removeChild(list.lastElementChild);
+  };
+
+  const submitHandler = (e) => {
+    e.preventDefault();
   };
 
   return createElement(
@@ -47,80 +46,80 @@ const AddRecipeModal = () => {
             'span',
             {
               class: 'add-recipe-modal-window-close',
-              onclick: () => {
-                closeModal();
-              },
+              onclick: closeModal,
             },
             'x'
           )
         ),
-        createElement('form', { class: 'add-recipe-form' }, [
-          createElement('input', {
-            class: 'add-recipe-form-input',
-            placeholder: 'Enter recipe name...',
-          }),
-          createElement(
-            'textarea',
-            {
-              class: 'add-recipe-form-input',
+        createElement(
+          'form',
+          { class: 'add-recipe-form', onsubmit: submitHandler },
+          [
+            FormInput({
+              className: 'add-recipe-form-input',
+              placeholder: 'Enter recipe name...',
+            }),
+            FormTextarea({
+              className: 'add-recipe-form-input',
               placeholder: 'Enter recipe description...',
-            },
-            ''
-          ),
-          createElement('input', {
-            class: 'add-recipe-form-input',
-            placeholder: 'Enter recipe categories...',
-          }),
-          createElement(
-            'ul',
-            {
-              id: 'add-recipe-form-ingredients-holder',
-            },
-            [
-              createElement(
-                'li',
-                {
-                  class: 'add-recipe-form-ingredients-element',
-                },
-                'Enter ingredient name and PC'
-              ),
-              createElement(
-                'li',
-                {
-                  class: 'add-recipe-form-add-ingredient-button',
-                  onclick: addInputs,
-                },
-                'Add one more ingredient'
-              ),
-              createElement(
-                'li',
-                {
-                  class: 'add-recipe-form-ingredients-element',
-                },
-                [
-                  createElement('input', {
-                    class: 'add-recipe-form-ingredients-input',
-                    placeholder: 'name',
-                  }),
-                  createElement('input', {
-                    class: 'add-recipe-form-ingredients-input',
-                    placeholder: `pc's`,
-                  }),
-                ]
-              ),
-            ]
-          ),
+            }),
+            FormInput({
+              className: 'add-recipe-form-input',
+              placeholder: 'Enter recipe categories...',
+            }),
 
-          createElement('input', {
-            class: 'add-recipe-form-input',
-            placeholder: 'Enter image url...',
-          }),
-          createElement(
-            'button',
-            { class: 'add-recipe-form-button' },
-            'Submit'
-          ),
-        ]),
+            createElement(
+              'div',
+              {
+                class: 'add-recipe-form-add-ingredient-holder',
+              },
+              [
+                createElement(
+                  'ul',
+                  {
+                    id: 'add-recipe-form-ingredients-list',
+                  },
+                  [
+                    createElement(
+                      'li',
+                      {
+                        class: 'add-recipe-form-ingredients-element',
+                      },
+                      "Enter ingredient name and PC's"
+                    ),
+                    IngredientInputs(),
+                  ]
+                ),
+                createElement(
+                  'span',
+                  {
+                    class: 'add-recipe-form-ingredient-add-button',
+                    onclick: addInputs,
+                  },
+                  'Add one more ingredient'
+                ),
+                createElement(
+                  'span',
+                  {
+                    class: 'add-recipe-form-ingredient-remove-button',
+                    onclick: removeInputs,
+                  },
+                  'Remove last ingredient'
+                ),
+              ]
+            ),
+
+            createElement('input', {
+              class: 'add-recipe-form-input',
+              placeholder: 'Enter image url...',
+            }),
+            createElement(
+              'button',
+              { class: 'add-recipe-form-button' },
+              'Submit'
+            ),
+          ]
+        ),
       ]
     )
   );
