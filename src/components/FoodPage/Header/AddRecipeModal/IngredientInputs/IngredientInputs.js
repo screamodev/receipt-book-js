@@ -1,8 +1,8 @@
 import { createElement } from '../../../../../libs/DOM';
-import './FormIngredients.scss';
+import './IngredientInputs.scss';
 import FormInput from '../../../../common/FormInput';
 
-const FormIngredients = () =>
+const IngredientInputs = () =>
   createElement(
     'li',
     {
@@ -20,4 +20,4 @@ const FormIngredients = () =>
     ]
   );
 
-export default FormIngredients;
+export default IngredientInputs;
