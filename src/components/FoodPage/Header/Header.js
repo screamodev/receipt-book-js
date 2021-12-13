@@ -12,9 +12,7 @@ const Header = () => {
       'button',
       {
         class: 'food-page-header-button',
-        onclick: () => {
-          openModal();
-        },
+        onclick: openModal,
       },
       'Add new recipe'
     ),

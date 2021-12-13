@@ -5,7 +5,7 @@ import { mount } from './libs/DOM';
 import Header from './components/FoodPage/Header/Header';
 import AddRecipeModal from './components/FoodPage/Header/AddRecipeModal';
 
-mount(document.getElementById('add-recipes-holder'), Header());
+mount(document.getElementById('header-holder'), Header());
 
 mount(document.getElementById('main'), AddRecipeModal());
 
