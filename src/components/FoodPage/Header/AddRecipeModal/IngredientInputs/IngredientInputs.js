@@ -2,22 +2,34 @@ import { createElement } from '../../../../../libs/DOM';
 import './IngredientInputs.scss';
 import FormInput from '../../../../common/FormInput';
 
-const IngredientInputs = () =>
-  createElement(
+const IngredientInputs = () => {
+  const removeInputs = (e) => {
+    e.target.parentElement.remove();
+  };
+
+  return createElement(
     'li',
     {
-      class: 'add-recipe-form-ingredients-element',
+      class: 'ingredients-element',
     },
     [
       FormInput({
-        className: 'add-recipe-form-ingredients-input',
+        className: 'ingredients-input',
         placeholder: 'name',
       }),
       FormInput({
-        className: 'add-recipe-form-ingredients-input',
+        className: 'ingredients-input',
         placeholder: "pc's",
       }),
+      createElement(
+        'span',
+        {
+          class: 'ingredients-remove-button',
+          onclick: removeInputs,
+        },
+        'Remove'
+      ),
     ]
   );
-
+};
 export default IngredientInputs;

@@ -1,11 +1,20 @@
 @import '../../../../../assets/scss/variables';
 
-.add-recipe-form-ingredients-element {
+.ingredients-element {
   display: flex;
   justify-content: space-around;
   margin: 5px;
 
-  .add-recipe-form-ingredients-input {
+  .ingredients-remove-button {
+    display: block;
+    font-weight: 600;
+    transition-duration: 100ms;
+    align-self: center;
+    &:hover {
+      color: darkred;
+    }
+  }
+  .ingredients-input {
     padding: 10px;
     width: 40%;
     border-radius: 20px;

@@ -17,11 +17,6 @@ const AddRecipeModal = () => {
     );
   };
 
-  const removeInputs = () => {
-    const list = document.getElementById('add-recipe-form-ingredients-list');
-    list.removeChild(list.lastElementChild);
-  };
-
   const submitHandler = (e) => {
     e.preventDefault();
   };
@@ -97,14 +92,6 @@ const AddRecipeModal = () => {
                     onclick: addInputs,
                   },
                   'Add one more ingredient'
-                ),
-                createElement(
-                  'span',
-                  {
-                    class: 'add-recipe-form-ingredient-remove-button',
-                    onclick: removeInputs,
-                  },
-                  'Remove last ingredient'
                 ),
               ]
             ),
