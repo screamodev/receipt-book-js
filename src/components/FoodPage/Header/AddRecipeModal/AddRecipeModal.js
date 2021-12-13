@@ -6,6 +6,27 @@ const AddRecipeModal = () => {
     document.getElementById('add-recipe-modal-window').style.display = 'none';
   };
 
+  const addInputs = () => {
+    document.getElementById('add-recipe-form-ingredients-holder').append(
+      createElement(
+        'li',
+        {
+          class: 'add-recipe-form-ingredients-element',
+        },
+        [
+          createElement('input', {
+            class: 'add-recipe-form-ingredients-input',
+            placeholder: 'name',
+          }),
+          createElement('input', {
+            class: 'add-recipe-form-ingredients-input',
+            placeholder: `pc's`,
+          }),
+        ]
+      )
+    );
+  };
+
   return createElement(
     'div',
     {
@@ -51,20 +72,42 @@ const AddRecipeModal = () => {
             placeholder: 'Enter recipe categories...',
           }),
           createElement(
-            'div',
+            'ul',
             {
-              class: 'add-recipe-form-ingredients-holder',
-              placeholder: 'Enter recipe ingredients',
+              id: 'add-recipe-form-ingredients-holder',
             },
             [
-              createElement('input', {
-                class: 'add-recipe-form-ingredients-input',
-                placeholder: 'name',
-              }),
-              createElement('input', {
-                class: 'add-recipe-form-ingredients-input',
-                placeholder: `pc's`,
-              }),
+              createElement(
+                'li',
+                {
+                  class: 'add-recipe-form-ingredients-element',
+                },
+                'Enter ingredient name and PC'
+              ),
+              createElement(
+                'li',
+                {
+                  class: 'add-recipe-form-add-ingredient-button',
+                  onclick: addInputs,
+                },
+                'Add one more ingredient'
+              ),
+              createElement(
+                'li',
+                {
+                  class: 'add-recipe-form-ingredients-element',
+                },
+                [
+                  createElement('input', {
+                    class: 'add-recipe-form-ingredients-input',
+                    placeholder: 'name',
+                  }),
+                  createElement('input', {
+                    class: 'add-recipe-form-ingredients-input',
+                    placeholder: `pc's`,
+                  }),
+                ]
+              ),
             ]
           ),
 
