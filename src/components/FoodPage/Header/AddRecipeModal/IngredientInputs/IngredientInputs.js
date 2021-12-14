@@ -16,13 +16,15 @@ const IngredientInputs = () => {
       FormInput({
         className: 'ingredients-input',
         placeholder: 'name',
+        name: 'ingredientName',
       }),
       FormInput({
         className: 'ingredients-input',
         placeholder: "pc's",
+        name: 'ingredientPC',
       }),
       createElement(
-        'span',
+        'button',
         {
           class: 'ingredients-remove-button',
           onclick: removeInputs,

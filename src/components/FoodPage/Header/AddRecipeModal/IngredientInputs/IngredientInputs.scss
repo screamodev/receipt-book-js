@@ -6,7 +6,10 @@
   margin: 5px;
 
   .ingredients-remove-button {
-    display: block;
+    font-size: inherit;
+    display: inline;
+    background: inherit;
+    border: none;
     font-weight: 600;
     transition-duration: 100ms;
     align-self: center;
