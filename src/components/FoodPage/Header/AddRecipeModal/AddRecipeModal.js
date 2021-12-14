@@ -3,8 +3,9 @@ import IngredientInputs from './IngredientInputs';
 import './addRecipeModal.scss';
 import FormInput from '../../../common/FormInput';
 import FormTextarea from '../../../common/FormTextarea';
-import { addRecipe } from '../../../../api/recipesApi';
+import { addRecipe, fetchRecipe } from '../../../../api/recipesApi';
 import { CREATE_RECIPE_MODAL_ID } from '../../../../constants/elementSelectors';
+import RecipeCard from '../../RecipeCard';
 
 const AddRecipeModal = () => {
   const closeModal = () => {
@@ -12,7 +13,9 @@ const AddRecipeModal = () => {
     modal.style.display = 'none';
   };
 
-  const addInputs = () => {
+  const addIngredientInputs = (e) => {
+    e.preventDefault();
+
     mount(
       document.getElementById('add-recipe-form-ingredients-list'),
       IngredientInputs()
@@ -22,22 +25,31 @@ const AddRecipeModal = () => {
   const createRecipe = (e) => {
     e.preventDefault();
 
-    const form = e.target;
-    const formData = new FormData(form);
+    const createRecipeForm = e.target;
+    const createRecipeFormData = new FormData(createRecipeForm);
 
-    const ingredientNames = formData.getAll('ingredientName');
-    const ingredientPCs = formData.getAll('ingredientPC');
+    const ingredientNames = createRecipeFormData.getAll('ingredientName');
+    const ingredientPCs = createRecipeFormData.getAll('ingredientPC');
 
     const recipe = {
-      name: formData.get('name'),
-      description: formData.get('description'),
-      categories: formData.get('categories').split(','),
+      name: createRecipeFormData.get('name'),
+      description: createRecipeFormData.get('description'),
+      categories: createRecipeFormData.get('categories').split(','),
       ingredients: ingredientNames.map((value, index) => ({
         [value]: ingredientPCs[index],
       })),
-      imgUrl: formData.get('imgUrl'),
+      imgUrl: createRecipeFormData.get('imgUrl'),
     };
-    addRecipe(recipe);
+    addRecipe(recipe).then(({ id }) => {
+      fetchRecipe(id).then((recipeResponse) => {
+        mount(
+          document.getElementById('explore-recipes'),
+          RecipeCard(recipeResponse)
+        );
+      });
+    });
+    const modal = document.getElementById(CREATE_RECIPE_MODAL_ID);
+    modal.style.display = 'none';
   };
 
   return createElement(
@@ -57,7 +69,7 @@ const AddRecipeModal = () => {
             class: 'add-recipe-modal-window-close-holder',
           },
           createElement(
-            'span',
+            'button',
             {
               class: 'add-recipe-modal-window-close',
               onclick: closeModal,
@@ -111,7 +123,7 @@ const AddRecipeModal = () => {
                   'button',
                   {
                     class: 'add-recipe-form-ingredient-add-button',
-                    onclick: addInputs,
+                    onclick: addIngredientInputs,
                   },
                   'Add ingredient'
                 ),
