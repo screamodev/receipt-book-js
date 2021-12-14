@@ -29,7 +29,7 @@ const IngredientInputs = () => {
           class: 'ingredients-remove-button',
           onclick: removeInputs,
         },
-        'Remove'
+        'x'
       ),
     ]
   );
