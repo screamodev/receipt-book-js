@@ -10,7 +10,7 @@ const createElement = (tag, attributes = {}, children = null) => {
       }
     });
   }
-  if (children != null) {
+  if (children !== null) {
     mount(domElement, children);
   }
 
