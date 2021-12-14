@@ -1,9 +1,10 @@
 import { createElement } from '../../../libs/DOM';
 import './Header.scss';
+import { CREATE_RECIPE_MODAL_ID } from '../../../constants/elementSelectors';
 
 const Header = () => {
   const openModal = () => {
-    document.getElementById('add-recipe-modal-window').style.display = 'block';
+    document.getElementById(CREATE_RECIPE_MODAL_ID).style.display = 'block';
   };
 
   return createElement('div', { class: 'food-page-header' }, [
