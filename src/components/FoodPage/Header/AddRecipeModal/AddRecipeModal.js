@@ -4,10 +4,11 @@ import './addRecipeModal.scss';
 import FormInput from '../../../common/FormInput';
 import FormTextarea from '../../../common/FormTextarea';
 import { addRecipe } from '../../../../api/recipesApi';
+import { CREATE_RECIPE_MODAL_ID } from '../../../../constants/elementSelectors';
 
 const AddRecipeModal = () => {
   const closeModal = () => {
-    const modal = document.getElementById('add-recipe-modal-window');
+    const modal = document.getElementById(CREATE_RECIPE_MODAL_ID);
     modal.style.display = 'none';
   };
 
