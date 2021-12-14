@@ -5,4 +5,15 @@ const fetchRecipes = async () => {
   return response.json();
 };
 
-export { fetchRecipes };
+const addRecipe = async (data) => {
+  const response = await fetch(`${BASE_API_URL}/recipes`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  });
+  return response.json();
+};
+
+export { fetchRecipes, addRecipe };

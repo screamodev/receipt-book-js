@@ -3,6 +3,7 @@ import IngredientInputs from './IngredientInputs';
 import './addRecipeModal.scss';
 import FormInput from '../../../common/FormInput';
 import FormTextarea from '../../../common/FormTextarea';
+import { addRecipe } from '../../../../api/recipesApi';
 
 const AddRecipeModal = () => {
   const closeModal = () => {
@@ -17,8 +18,25 @@ const AddRecipeModal = () => {
     );
   };
 
-  const submitHandler = (e) => {
+  const createRecipe = (e) => {
     e.preventDefault();
+
+    const form = e.target;
+    const formData = new FormData(form);
+
+    const ingredientNames = formData.getAll('ingredientName');
+    const ingredientPCs = formData.getAll('ingredientPC');
+
+    const recipe = {
+      name: formData.get('name'),
+      description: formData.get('description'),
+      categories: formData.get('categories').split(','),
+      ingredients: ingredientNames.map((value, index) => ({
+        [value]: ingredientPCs[index],
+      })),
+      imgUrl: formData.get('imgUrl'),
+    };
+    addRecipe(recipe);
   };
 
   return createElement(
@@ -48,19 +66,22 @@ const AddRecipeModal = () => {
         ),
         createElement(
           'form',
-          { class: 'add-recipe-form', onsubmit: submitHandler },
+          { class: 'add-recipe-form', onsubmit: createRecipe },
           [
             FormInput({
               className: 'add-recipe-form-input',
               placeholder: 'Enter recipe name...',
+              name: 'name',
             }),
             FormTextarea({
               className: 'add-recipe-form-input',
               placeholder: 'Enter recipe description...',
+              name: 'description',
             }),
             FormInput({
               className: 'add-recipe-form-input',
               placeholder: 'Enter recipe categories...',
+              name: 'categories',
             }),
 
             createElement(
@@ -86,12 +107,12 @@ const AddRecipeModal = () => {
                   ]
                 ),
                 createElement(
-                  'span',
+                  'button',
                   {
                     class: 'add-recipe-form-ingredient-add-button',
                     onclick: addInputs,
                   },
-                  'Add one more ingredient'
+                  'Add ingredient'
                 ),
               ]
             ),
@@ -99,10 +120,11 @@ const AddRecipeModal = () => {
             createElement('input', {
               class: 'add-recipe-form-input',
               placeholder: 'Enter image url...',
+              name: 'imgUrl',
             }),
             createElement(
               'button',
-              { class: 'add-recipe-form-button' },
+              { class: 'add-recipe-form-button', type: 'submit' },
               'Submit'
             ),
           ]

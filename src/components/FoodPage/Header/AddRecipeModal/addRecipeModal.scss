@@ -64,9 +64,12 @@
     }
 
     .add-recipe-form-ingredient-add-button {
-      display: block;
+      font-size: inherit;
+      display: inline;
+      background: inherit;
       font-weight: 600;
       transition-duration: 100ms;
+      border: none;
 
       &::before {
         content: '+ ';
