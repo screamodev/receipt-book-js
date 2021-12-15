@@ -1,6 +1,6 @@
 @import './src/assets/scss/variables';
 
-.recipes-cards {
+#recipes-cards {
   display: flex;
   flex-wrap: wrap;
   @media screen and (max-width: 1580px) {

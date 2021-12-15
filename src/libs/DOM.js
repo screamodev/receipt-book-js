@@ -3,11 +3,16 @@ const createElement = (tag, attributes = {}, children = null) => {
 
   if (attributes && typeof attributes === 'object') {
     Object.entries(attributes).forEach(([key, value]) => {
-      domElement.setAttribute(key, value);
+      if (typeof value === 'function') {
+        domElement[key] = value;
+      } else {
+        domElement.setAttribute(key, value);
+      }
     });
   }
-
-  mount(domElement, children);
+  if (children !== null) {
+    mount(domElement, children);
+  }
 
   return domElement;
 };

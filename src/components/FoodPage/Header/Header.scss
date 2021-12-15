@@ -1,0 +1,45 @@
+@import './src/assets/scss/variables';
+
+.food-page-header {
+  display: flex;
+  margin-bottom: 30px;
+  justify-content: space-between;
+  width: 100%;
+
+  .food-page-header-title {
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 44px;
+    color: $secondary-500;
+  }
+
+  .food-page-header-button {
+    border: none;
+    background: inherit;
+    font-size: 24px;
+    line-height: 29px;
+    color: $secondary-600;
+    position: relative;
+    border-bottom: 3px solid white;
+    transition-duration: 500ms;
+
+    &:hover {
+      border-bottom: 3px solid $secondary-600;
+    }
+    &::before {
+      content: '+';
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      font-weight: bold;
+      color: white;
+      left: -30%;
+      position: absolute;
+      border-radius: 30px;
+      width: 30px;
+      height: 30px;
+      background: $secondary-600;
+    }
+  }
+}

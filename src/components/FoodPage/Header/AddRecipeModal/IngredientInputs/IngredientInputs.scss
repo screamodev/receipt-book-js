@@ -1,0 +1,42 @@
+@import '../../../../../assets/scss/variables';
+
+.ingredients-element {
+  display: flex;
+  justify-content: space-around;
+  margin: 5px;
+
+  label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ingredients-input {
+    padding: 10px;
+    width: 100%;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    border-bottom: 3px solid black;
+
+    &:focus {
+      border-bottom: 3px solid $secondary-500;
+    }
+  }
+
+  .ingredients-remove-button {
+    border: 1px solid black;
+    border-radius: 30px;
+    padding: 0 5px;
+    font-size: inherit;
+    display: inline;
+    background: inherit;
+    font-weight: 600;
+    transition-duration: 100ms;
+    align-self: center;
+
+    &:hover {
+      color: darkred;
+    }
+  }
+}

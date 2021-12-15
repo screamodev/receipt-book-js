@@ -1,0 +1,134 @@
+@import '../../../../assets/scss/variables';
+
+#add-recipe-modal-window {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+
+  .add-recipe-modal-window-content {
+    background-color: $secondary-300;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 30px;
+    border: 2px solid grey;
+    width: 30%;
+    z-index: 2000;
+    @media screen and (max-width: 992px) {
+      width: 60%;
+    }
+  }
+
+  .add-recipe-modal-window-close-holder {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    padding: 15px;
+
+    .add-recipe-modal-window-close {
+      padding: 0 10px;
+      color: black;
+      font-size: 24px;
+      font-weight: bold;
+      cursor: pointer;
+      border: 1px solid grey;
+      border-radius: 30px;
+      transition: background-color 0.5s, color 0.5s;
+
+      &:hover {
+        background-color: darkred;
+        color: white;
+      }
+    }
+  }
+
+  .add-recipe-form {
+    display: flex;
+    flex-direction: column;
+    label {
+      line-height: 30px;
+    }
+    .add-recipe-form-add-ingredient-holder {
+      margin-bottom: 40px;
+      text-align: center;
+      #add-recipe-form-ingredients-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        .add-recipe-form-ingredients-element {
+          display: flex;
+        }
+      }
+    }
+
+    .add-recipe-form-ingredient-add-button {
+      font-size: inherit;
+      display: inline;
+      background: inherit;
+      font-weight: 600;
+      transition-duration: 100ms;
+      border: none;
+
+      &::before {
+        content: '+ ';
+      }
+
+      &:hover {
+        color: dodgerblue;
+      }
+    }
+
+    .add-recipe-form-button {
+      width: 50%;
+      border: 0;
+      display: block;
+      align-self: center;
+      padding: 0.75rem 1.25rem;
+      border-radius: 10rem;
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 1rem;
+      letter-spacing: 0.15rem;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $primary-400;
+        border-radius: 10rem;
+        z-index: -2;
+      }
+      &:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0%;
+        height: 100%;
+        background-color: darken($primary-400, 15%);
+        transition: all 0.3s;
+        border-radius: 10rem;
+        z-index: -1;
+      }
+      &:hover {
+        color: #fff;
+        &:before {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
