@@ -53,6 +53,7 @@ const AddRecipeModal = () => {
     });
     const modal = document.getElementById(CREATE_RECIPE_MODAL_ID);
     modal.style.display = 'none';
+    createRecipeForm.reset();
   };
 
   return createElement(
