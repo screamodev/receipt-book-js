@@ -4,7 +4,10 @@ import './addRecipeModal.scss';
 import FormInput from '../../../common/FormInput';
 import FormTextarea from '../../../common/FormTextarea';
 import { addRecipe, fetchRecipe } from '../../../../api/recipesApi';
-import { CREATE_RECIPE_MODAL_ID } from '../../../../constants/elementSelectors';
+import {
+  CREATE_RECIPE_MODAL_ID,
+  CREATE_RECIPES_ID,
+} from '../../../../constants/elementSelectors';
 import RecipeCard from '../../RecipeCard';
 
 const AddRecipeModal = () => {
@@ -35,15 +38,15 @@ const AddRecipeModal = () => {
       name: createRecipeFormData.get('name'),
       description: createRecipeFormData.get('description'),
       categories: createRecipeFormData.get('categories').split(','),
-      ingredients: ingredientNames.map((value, index) => ({
-        [value]: ingredientPCs[index],
+      ingredients: ingredientNames.map((name, index) => ({
+        [name]: ingredientPCs[index],
       })),
       imgUrl: createRecipeFormData.get('imgUrl'),
     };
     addRecipe(recipe).then(({ id }) => {
       fetchRecipe(id).then((recipeResponse) => {
         mount(
-          document.getElementById('explore-recipes'),
+          document.getElementById(CREATE_RECIPES_ID),
           RecipeCard(recipeResponse)
         );
       });
@@ -82,19 +85,22 @@ const AddRecipeModal = () => {
           { class: 'add-recipe-form', onsubmit: createRecipe },
           [
             FormInput({
-              className: 'add-recipe-form-input',
+              className: 'default-form-input add-recipe-form-input',
               placeholder: 'Enter recipe name...',
               name: 'name',
+              labelText: 'Name',
             }),
             FormTextarea({
-              className: 'add-recipe-form-input',
+              className: 'default-form-textarea add-recipe-form-textarea',
               placeholder: 'Enter recipe description...',
               name: 'description',
+              labelText: 'Description',
             }),
             FormInput({
-              className: 'add-recipe-form-input',
-              placeholder: 'Enter recipe categories...',
+              className: 'default-form-input add-recipe-form-input',
+              placeholder: 'Enter recipe categories comma separated...',
               name: 'categories',
+              labelText: 'Categories',
             }),
 
             createElement(
@@ -108,16 +114,7 @@ const AddRecipeModal = () => {
                   {
                     id: 'add-recipe-form-ingredients-list',
                   },
-                  [
-                    createElement(
-                      'li',
-                      {
-                        class: 'add-recipe-form-ingredients-element',
-                      },
-                      "Enter ingredient name and PC's"
-                    ),
-                    IngredientInputs(),
-                  ]
+                  IngredientInputs()
                 ),
                 createElement(
                   'button',
@@ -129,11 +126,11 @@ const AddRecipeModal = () => {
                 ),
               ]
             ),
-
-            createElement('input', {
-              class: 'add-recipe-form-input',
+            FormInput({
+              className: 'default-form-input add-recipe-form-input',
               placeholder: 'Enter image url...',
               name: 'imgUrl',
+              labelText: 'Image url',
             }),
             createElement(
               'button',
