@@ -6,7 +6,7 @@ import FormTextarea from '../../../common/FormTextarea';
 import { addRecipe, fetchRecipe } from '../../../../api/recipesApi';
 import {
   CREATE_RECIPE_MODAL_ID,
-  CREATE_RECIPES_ID,
+  CREATE_RECIPES_CARDS_ID,
 } from '../../../../constants/elementSelectors';
 import RecipeCard from '../../RecipeCard';
 
@@ -46,7 +46,7 @@ const AddRecipeModal = () => {
     addRecipe(recipe).then(({ id }) => {
       fetchRecipe(id).then((recipeResponse) => {
         mount(
-          document.getElementById(CREATE_RECIPES_ID),
+          document.getElementById(CREATE_RECIPES_CARDS_ID),
           RecipeCard(recipeResponse)
         );
       });
