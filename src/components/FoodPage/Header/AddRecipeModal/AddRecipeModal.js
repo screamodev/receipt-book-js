@@ -5,6 +5,8 @@ import FormInput from '../../../common/FormInput';
 import FormTextarea from '../../../common/FormTextarea';
 import { addRecipe, fetchRecipe } from '../../../../api/recipesApi';
 import {
+  CREATE_RECIPE_FORM_INGREDIENT_HOLDER_CLASS,
+  CREATE_RECIPE_FORM_INGREDIENT_LIST_ID,
   CREATE_RECIPE_MODAL_ID,
   CREATE_RECIPES_CARDS_ID,
 } from '../../../../constants/elementSelectors';
@@ -20,7 +22,7 @@ const AddRecipeModal = () => {
     e.preventDefault();
 
     mount(
-      document.getElementById('add-recipe-form-ingredients-list'),
+      document.getElementById(CREATE_RECIPE_FORM_INGREDIENT_LIST_ID),
       IngredientInputs()
     );
   };
@@ -104,7 +106,7 @@ const AddRecipeModal = () => {
             createElement(
               'div',
               {
-                class: 'add-recipe-form-add-ingredient-holder',
+                class: CREATE_RECIPE_FORM_INGREDIENT_HOLDER_CLASS,
               },
               [
                 createElement(
