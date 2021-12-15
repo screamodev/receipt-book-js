@@ -17,11 +17,13 @@ const IngredientInputs = () => {
         className: 'ingredients-input',
         placeholder: 'name',
         name: 'ingredientName',
+        labelText: 'Ingredient name',
       }),
       FormInput({
         className: 'ingredients-input',
         placeholder: "pc's",
         name: 'ingredientPC',
+        labelText: 'Ingredient pc',
       }),
       createElement(
         'button',
