@@ -5,7 +5,7 @@ import './recipeCards.scss';
 const RecipeCards = ({ recipes }) =>
   createElement(
     'div',
-    { class: 'recipes-cards' },
+    { id: 'recipes-cards' },
     recipes.map((recipe) => RecipeCard(recipe))
   );
 
