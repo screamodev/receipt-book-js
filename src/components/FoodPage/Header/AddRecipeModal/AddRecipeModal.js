@@ -85,19 +85,16 @@ const AddRecipeModal = () => {
           { class: 'add-recipe-form', onsubmit: createRecipe },
           [
             FormInput({
-              className: 'default-form-input add-recipe-form-input',
               placeholder: 'Enter recipe name...',
               name: 'name',
               labelText: 'Name',
             }),
             FormTextarea({
-              className: 'default-form-textarea add-recipe-form-textarea',
               placeholder: 'Enter recipe description...',
               name: 'description',
               labelText: 'Description',
             }),
             FormInput({
-              className: 'default-form-input add-recipe-form-input',
               placeholder: 'Enter recipe categories comma separated...',
               name: 'categories',
               labelText: 'Categories',
@@ -127,7 +124,6 @@ const AddRecipeModal = () => {
               ]
             ),
             FormInput({
-              className: 'default-form-input add-recipe-form-input',
               placeholder: 'Enter image url...',
               name: 'imgUrl',
               labelText: 'Image url',
