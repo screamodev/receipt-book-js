@@ -1,16 +1,11 @@
 import { createElement } from '../../../libs/DOM';
 import './FormTextarea.scss';
 
-const FormTextarea = ({
-  className = 'default-form-input',
-  placeholder,
-  name,
-  labelText = '',
-}) =>
+const FormTextarea = ({ className, placeholder, name, labelText = '' }) =>
   createElement('label', {}, [
     labelText,
     createElement('textarea', {
-      class: className,
+      class: `default-form-textarea ${className}`,
       placeholder,
       name,
     }),

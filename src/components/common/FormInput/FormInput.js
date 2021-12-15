@@ -1,16 +1,11 @@
 import { createElement } from '../../../libs/DOM';
 import './FormInput.scss';
 
-const FormInput = ({
-  className = 'default-form-input',
-  placeholder,
-  name,
-  labelText = '',
-}) =>
+const FormInput = ({ className, placeholder, name, labelText = '' }) =>
   createElement('label', {}, [
     labelText,
     createElement('input', {
-      class: className,
+      class: `default-form-input ${className}`,
       placeholder,
       name,
     }),
