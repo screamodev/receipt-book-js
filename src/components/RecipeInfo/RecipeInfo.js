@@ -93,13 +93,6 @@ const RecipeInfo = ({ name, description, ingredients, imgUrl }) =>
                   )
                 )
               ),
-              createElement(
-                'button',
-                {
-                  class: 'ingredient-button',
-                },
-                'View recipe'
-              ),
             ]
           ),
         ]
