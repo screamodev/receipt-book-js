@@ -17,7 +17,7 @@ const RecipeInfo = ({ name, description, ingredients, imgUrl }) =>
         createElement('img', {
           class: 'recipe-bookmark-icon-img',
           src: bookmarkIcon,
-          alt: 'bookmark-icon.png',
+          alt: 'bookmark-icon',
         })
       ),
       createElement(
@@ -72,7 +72,7 @@ const RecipeInfo = ({ name, description, ingredients, imgUrl }) =>
                         },
                         createElement('img', {
                           src: ingredientIcon,
-                          alt: 'dish.png',
+                          alt: 'dish',
                         })
                       ),
                       createElement(
