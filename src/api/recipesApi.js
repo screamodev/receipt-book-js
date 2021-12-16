@@ -10,6 +10,11 @@ const fetchRecipe = async (id) => {
   return response.json();
 };
 
+const searchRecipes = async (textFind) => {
+  const response = await fetch(`${BASE_API_URL}/recipes/?q=${textFind}`);
+  return response.json();
+};
+
 const addRecipe = async (recipe) => {
   const response = await fetch(`${BASE_API_URL}/recipes`, {
     method: 'POST',
@@ -22,4 +27,4 @@ const addRecipe = async (recipe) => {
   return response.json();
 };
 
-export { fetchRecipes, fetchRecipe, addRecipe };
+export { fetchRecipes, fetchRecipe, searchRecipes, addRecipe };
