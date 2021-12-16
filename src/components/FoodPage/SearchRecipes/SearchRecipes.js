@@ -1,11 +1,11 @@
 import { createElement, mount } from '../../../libs/DOM';
 import './searchRecipes.scss';
 import { searchRecipes } from '../../../api/recipesApi';
-import { ENTER_KEY } from '../../../constants/elementSelectors';
 import RecipeCards from '../RecipeCards';
 
 const SearchRecipes = () => {
   const handleKeyPress = (e) => {
+    const ENTER_KEY = 13;
     const searchRecipesCards = document.getElementById('search-recipes-cards');
     const input = document.getElementById('search-input');
     if (e.keyCode === ENTER_KEY) {
