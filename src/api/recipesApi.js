@@ -10,8 +10,8 @@ const fetchRecipe = async (id) => {
   return response.json();
 };
 
-const searchRecipes = async (textFind) => {
-  const response = await fetch(`${BASE_API_URL}/recipes/?q=${textFind}`);
+const searchRecipes = async (query) => {
+  const response = await fetch(`${BASE_API_URL}/recipes/?q=${query}`);
   return response.json();
 };
 
