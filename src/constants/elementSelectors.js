@@ -1,4 +1,6 @@
 export const CREATE_MAIN_ID = 'main';
+export const CREATE_CONTENT_ID = 'content';
+
 export const CREATE_HEADER_HOLDER_ID = 'header-holder';
 
 export const CREATE_RECIPES_ID = 'explore-recipes';

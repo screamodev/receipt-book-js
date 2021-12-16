@@ -1,6 +1,7 @@
 import { createElement, mount } from '../../../libs/DOM';
 import './recipeCard.scss';
 import RecipeInfo from '../../RecipeInfo/RecipeInfo';
+import { CREATE_CONTENT_ID } from '../../../constants/elementSelectors';
 
 const RecipeCard = ({ name, description, categories, ingredients, imgUrl }) => {
   const showRecipeInfo = () => {
@@ -9,7 +10,7 @@ const RecipeCard = ({ name, description, categories, ingredients, imgUrl }) => {
       recipeInfo.remove();
     }
     mount(
-      document.getElementById('content'),
+      document.getElementById(CREATE_CONTENT_ID),
       RecipeInfo({ name, description, ingredients, imgUrl })
     );
   };
