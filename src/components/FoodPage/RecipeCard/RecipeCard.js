@@ -1,12 +1,15 @@
 import { createElement, mount } from '../../../libs/DOM';
 import './recipeCard.scss';
 import RecipeInfo from '../../RecipeInfo/RecipeInfo';
-import { CREATE_CONTENT_ID } from '../../../constants/elementSelectors';
+import {
+  CREATE_CONTENT_ID,
+  CREATE_RECIPE_INFO_WRAPPER,
+} from '../../../constants/elementSelectors';
 
 const RecipeCard = ({ name, description, categories, ingredients, imgUrl }) => {
   const showRecipeInfo = () => {
-    const recipeInfo = document.querySelector('.recipe-info-wrapper');
-    if (recipeInfo != null) {
+    const recipeInfo = document.getElementById(CREATE_RECIPE_INFO_WRAPPER);
+    if (recipeInfo) {
       recipeInfo.remove();
     }
     mount(
