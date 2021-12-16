@@ -1,3 +1,5 @@
+export const ENTER_KEY = 13;
+
 export const CREATE_MAIN_ID = 'main';
 export const CREATE_CONTENT_ID = 'content';
 

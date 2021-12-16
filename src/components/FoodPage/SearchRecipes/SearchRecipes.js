@@ -1,30 +1,28 @@
 import { createElement, mount } from '../../../libs/DOM';
 import './searchRecipes.scss';
-import RecipeCard from '../RecipeCard';
 import { searchRecipes } from '../../../api/recipesApi';
+import { ENTER_KEY } from '../../../constants/elementSelectors';
+import RecipeCards from '../RecipeCards';
 
 const SearchRecipes = () => {
-  const onEnterPress = (e) => {
+  const handleKeyPress = (e) => {
     const searchRecipesCards = document.getElementById('search-recipes-cards');
-    const input = document.querySelector('.search-input');
-    if (e.keyCode === 13) {
+    const input = document.getElementById('search-input');
+    if (e.keyCode === ENTER_KEY) {
       if (searchRecipesCards != null) {
         searchRecipesCards.innerHTML = '';
       }
       searchRecipes(input.value).then((recipes) =>
-        mount(
-          searchRecipesCards,
-          recipes.map((recipe) => RecipeCard(recipe))
-        )
+        mount(searchRecipesCards, RecipeCards({ recipes }))
       );
     }
   };
 
   return createElement('div', { class: 'search-recipes-holder' }, [
     createElement('input', {
-      class: 'search-input',
+      id: 'search-input',
       placeholder: 'Search',
-      onkeypress: onEnterPress,
+      onkeypress: handleKeyPress,
     }),
     createElement('div', {
       id: 'search-recipes-cards',
