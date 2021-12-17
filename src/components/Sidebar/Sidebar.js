@@ -4,7 +4,7 @@ import { SIDEBAR } from '../../constants/elementSelectors';
 import menuIcon from '../../assets/icons/menu-icon.svg';
 import foodIcon from '../../assets/icons/food-icon.svg';
 import bookmarkIcon from '../../assets/icons/bookmark-icon.svg';
-import SidebarElement from './SidebarElement/SidebarElement';
+import SidebarElement from './SidebarElement';
 
 const Sidebar = () => {
   const sidebarItems = [

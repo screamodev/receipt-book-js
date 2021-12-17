@@ -5,7 +5,7 @@ import { mount } from './libs/DOM';
 import Header from './components/FoodPage/Header/Header';
 import AddRecipeModal from './components/FoodPage/Header/AddRecipeModal';
 import SearchRecipes from './components/FoodPage/SearchRecipes/SearchRecipes';
-import Sidebar from './components/Sidebar/Sidebar';
+import Sidebar from './components/Sidebar';
 import {
   CREATE_HEADER_HOLDER_ID,
   CREATE_MAIN_ID,
