@@ -11,12 +11,12 @@ import { ENTER_KEY } from '../../../constants/keyCodes';
 const SearchRecipes = () => {
   const handleKeyPress = (e) => {
     const searchRecipesCards = document.getElementById(SEARCH_RECIPES_CARDS);
-    const input = document.getElementById(SEARCH_INPUT);
+    const searchInput = document.getElementById(SEARCH_INPUT);
     if (e.keyCode === ENTER_KEY) {
       if (searchRecipesCards) {
         searchRecipesCards.innerHTML = '';
       }
-      searchRecipes(input.value).then((recipes) =>
+      searchRecipes(searchInput.value).then((recipes) =>
         mount(searchRecipesCards, RecipeCards({ recipes }))
       );
     }

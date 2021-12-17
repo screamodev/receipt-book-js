@@ -9,10 +9,10 @@ import {
   CREATE_HEADER_HOLDER_ID,
   CREATE_MAIN_ID,
   CREATE_RECIPES_ID,
-  CREATE_SEARCH_RECIPES_ID,
+  SEARCH_RECIPES_ID,
 } from './constants/elementSelectors';
 
-mount(document.getElementById(CREATE_SEARCH_RECIPES_ID), SearchRecipes());
+mount(document.getElementById(SEARCH_RECIPES_ID), SearchRecipes());
 
 mount(document.getElementById(CREATE_HEADER_HOLDER_ID), Header());
 
