@@ -1,3 +1,5 @@
+export const SIDEBAR = 'sidebar';
+
 export const CREATE_MAIN_ID = 'main';
 export const CREATE_CONTENT_ID = 'content';
 
