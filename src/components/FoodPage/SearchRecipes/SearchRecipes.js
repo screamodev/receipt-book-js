@@ -2,15 +2,16 @@ import { createElement, mount } from '../../../libs/DOM';
 import './searchRecipes.scss';
 import { searchRecipes } from '../../../api/recipesApi';
 import RecipeCards from '../RecipeCards';
-import { CREATE_SEARCH_RECIPES_CARDS } from '../../../constants/elementSelectors';
+import {
+  SEARCH_INPUT,
+  SEARCH_RECIPES_CARDS,
+} from '../../../constants/elementSelectors';
+import { ENTER_KEY } from '../../../constants/keyCodes';
 
 const SearchRecipes = () => {
   const handleKeyPress = (e) => {
-    const ENTER_KEY = 13;
-    const searchRecipesCards = document.getElementById(
-      CREATE_SEARCH_RECIPES_CARDS
-    );
-    const input = document.getElementById('search-input');
+    const searchRecipesCards = document.getElementById(SEARCH_RECIPES_CARDS);
+    const input = document.getElementById(SEARCH_INPUT);
     if (e.keyCode === ENTER_KEY) {
       if (searchRecipesCards) {
         searchRecipesCards.innerHTML = '';
@@ -23,12 +24,12 @@ const SearchRecipes = () => {
 
   return createElement('div', { class: 'search-recipes-holder' }, [
     createElement('input', {
-      id: 'search-input',
+      id: SEARCH_INPUT,
       placeholder: 'Search',
       onkeypress: handleKeyPress,
     }),
     createElement('div', {
-      id: 'search-recipes-cards',
+      id: SEARCH_RECIPES_CARDS,
     }),
   ]);
 };

@@ -4,7 +4,8 @@ export const CREATE_CONTENT_ID = 'content';
 export const CREATE_HEADER_HOLDER_ID = 'header-holder';
 
 export const CREATE_SEARCH_RECIPES_ID = 'search-recipes';
-export const CREATE_SEARCH_RECIPES_CARDS = 'search-recipes-cards';
+export const SEARCH_INPUT = 'search-input';
+export const SEARCH_RECIPES_CARDS = 'search-recipes-cards';
 
 export const CREATE_RECIPES_ID = 'explore-recipes';
 export const CREATE_RECIPES_CARDS_ID = 'recipes-cards';

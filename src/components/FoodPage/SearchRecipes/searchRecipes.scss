@@ -11,13 +11,23 @@
       line-height: 44px;
       outline: none;
       border: none;
-      opacity: 80%;
-      color: #0000004d;
+      opacity: 70%;
+      color: #00000000;
       font-weight: normal;
       margin-bottom: 22px;
 
       &:focus {
-        opacity: 30%;
+        opacity: 1;
+        color: #0000004d;
+      }
+    }
+
+    #search-input::-webkit-input-placeholder {
+      color: black;
+      opacity: 30%;
+      &:focus {
+        opacity: 1;
+        color: #0000004d;
       }
     }
 
