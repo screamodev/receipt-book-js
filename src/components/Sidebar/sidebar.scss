@@ -10,5 +10,10 @@
   background: $secondary-300;
   padding: 60px 10px;
   transition-duration: 500ms;
-  transform: translateX(-50%);
+  transform: translateX(-75%);
+
+  .nav {
+    display: flex;
+    flex-direction: column;
+  }
 }
