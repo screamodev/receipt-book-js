@@ -1,7 +1,6 @@
 import { createElement } from '../../../libs/DOM';
 import './sidebarElement.scss';
-
-const BASE_URL = 'http://localhost:8080';
+import { BASE_URL } from '../../../config';
 
 const SidebarElement = ({ name, icon, iconAlt, href }) => {
   window.onload = () => {
