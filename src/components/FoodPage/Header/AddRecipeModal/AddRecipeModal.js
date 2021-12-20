@@ -41,7 +41,8 @@ const AddRecipeModal = () => {
       description: createRecipeFormData.get('description'),
       categories: createRecipeFormData.get('categories').split(','),
       ingredients: ingredientNames.map((name, index) => ({
-        [name]: ingredientPCs[index],
+        name,
+        weight: ingredientPCs[index],
       })),
       imgUrl: createRecipeFormData.get('imgUrl'),
     };

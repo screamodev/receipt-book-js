@@ -6,7 +6,8 @@
       "categories": ["еда", " вкусная"],
       "ingredients": [
         {
-          "рыбка": "1шт"
+          "name": "Рыбка",
+          "weight": "1 шт"
         }
       ],
       "imgUrl": "https://dostavka.primebeef.ru/blog/wp-content/uploads/kulebyaka-s-myasom_1617983225_8_max-e1632390973623-330x200.jpg",
@@ -18,7 +19,8 @@
       "categories": ["еда", " вкусная"],
       "ingredients": [
         {
-          "Пюрешка": "1шт"
+          "name": "Пюрешка",
+          "weight": "1 шт"
         }
       ],
       "imgUrl": "https://www.kushpo.info/wp-content/uploads/2020/11/kompot-iz-yablok-i-chernosliva-330x200.jpg",
@@ -30,7 +32,8 @@
       "categories": ["еда", " не вкусная"],
       "ingredients": [
         {
-          "Голубцы": "1шт"
+          "name": "Голубцы",
+          "weight": "1 шт"
         }
       ],
       "imgUrl": "https://www.kushpo.info/wp-content/uploads/2020/11/kompot-iz-yablok-i-chernosliva-330x200.jpg",
@@ -42,7 +45,8 @@
       "categories": ["еда", " вкусная"],
       "ingredients": [
         {
-          "Пловчик": "1шт"
+          "name": "Пловчик",
+          "weight": "1 шт"
         }
       ],
       "imgUrl": "https://www.kuhnyalokman.com/wp-content/uploads/2021/07/%D0%91%D0%B0%D0%BD%D0%B0%D0%BD%D0%BE%D0%B2%D0%BE%D0%B5-%D0%BF%D0%B5%D1%87%D0%B5%D0%BD%D1%8C%D0%B5-330x200.jpg",

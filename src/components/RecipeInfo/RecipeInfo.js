@@ -80,14 +80,14 @@ const RecipeInfo = ({ name, description, ingredients, imgUrl }) =>
                         {
                           class: 'ingredient-item-name',
                         },
-                        Object.entries(ingredient)[0][0]
+                        ingredient.name
                       ),
                       createElement(
                         'span',
                         {
                           class: 'ingredient-item-pcs',
                         },
-                        Object.entries(ingredient)[0][1]
+                        ingredient.weight
                       ),
                     ]
                   )
