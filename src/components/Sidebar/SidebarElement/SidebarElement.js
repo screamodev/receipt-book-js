@@ -1,21 +1,36 @@
 import { createElement } from '../../../libs/DOM';
 import './sidebarElement.scss';
-import { SIDEBAR } from '../../../constants/elementSelectors';
 
-const SidebarElement = ({ name, icon, iconAlt }) => {
-  let sidebarStatus = false;
+const BASE_URL = 'http://localhost:8080';
 
-  const showSidebar = () => {
-    const sidebar = document.getElementById(SIDEBAR);
-    sidebarStatus = !sidebarStatus;
-    sidebar.style.transform = `translateX(${sidebarStatus ? 0 : -50}%)`;
+const SidebarElement = ({ name, icon, iconAlt, href }) => {
+  window.onload = () => {
+    const navMenuElement = document.querySelectorAll('.nav-menu-element');
+    const currentUrl = window.location.pathname;
+    const homeUrl = '/';
+    const foodUrl = '/food';
+    const bookmarksUrl = '/bookmarks';
+    const addActiveClass = (url) => {
+      navMenuElement.forEach((menuElement) => {
+        if (menuElement.href === `${BASE_URL}${url}`) {
+          menuElement.classList.add('active');
+        }
+      });
+    };
+    if (currentUrl === homeUrl) {
+      addActiveClass('/');
+    } else if (currentUrl === foodUrl) {
+      addActiveClass('/food');
+    } else if (currentUrl === bookmarksUrl) {
+      addActiveClass('/bookmarks');
+    }
   };
 
   return createElement(
-    'div',
+    'a',
     {
+      href: `${href}`,
       class: 'nav-menu-element',
-      onclick: showSidebar,
     },
     [
       createElement('span', { class: 'nav-menu-element-title' }, name),
