@@ -5,6 +5,8 @@ import menuIcon from '../../assets/icons/menu-icon.svg';
 import foodIcon from '../../assets/icons/food-icon.svg';
 import bookmarkIcon from '../../assets/icons/bookmark-icon.svg';
 import SidebarElement from './SidebarElement';
+import { BASE_URL } from '../../config';
+import { BOOKMARKS_URL, FOOD_URL, HOME_URL } from '../../constants/routes';
 
 const Sidebar = () => {
   let sidebarStatus = false;
@@ -28,8 +30,26 @@ const Sidebar = () => {
       href: '/bookmarks',
     },
   ];
+  window.onload = () => {
+    const navMenuElement = document.querySelectorAll('.nav-menu-element');
+    const currentUrl = window.location.pathname;
+    const addActiveClass = (url) => {
+      navMenuElement.forEach((menuElement) => {
+        if (menuElement.href === `${BASE_URL}${url}`) {
+          menuElement.classList.add('active');
+        }
+      });
+    };
+    if (currentUrl === HOME_URL) {
+      addActiveClass(HOME_URL);
+    } else if ([HOME_URL, FOOD_URL].includes(currentUrl)) {
+      addActiveClass(FOOD_URL);
+    } else if (currentUrl === BOOKMARKS_URL) {
+      addActiveClass(BOOKMARKS_URL);
+    }
+  };
 
-  const showSidebar = () => {
+  const toggleSidebar = () => {
     const sidebar = document.getElementById(SIDEBAR);
     sidebarStatus = !sidebarStatus;
     sidebar.style.transform = `translateX(${sidebarStatus ? 0 : -50}%)`;
@@ -37,7 +57,7 @@ const Sidebar = () => {
 
   return createElement(
     'aside',
-    { id: SIDEBAR, onclick: showSidebar },
+    { id: SIDEBAR, onclick: toggleSidebar },
     createElement(
       'nav',
       { class: 'nav' },
