@@ -1,3 +1,3 @@
-export const HOME_URL = '/';
-export const FOOD_URL = '/food';
+export const FOOD_URL = '/';
+export const MENU_URL = '/menu';
 export const BOOKMARKS_URL = '/bookmarks';

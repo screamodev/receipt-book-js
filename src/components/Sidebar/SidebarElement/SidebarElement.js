@@ -1,6 +1,5 @@
 import { createElement } from '../../../libs/DOM';
 import './sidebarElement.scss';
-import { BASE_URL } from '../../../config';
 
 const SidebarElement = ({ name, icon, iconAlt, href }) => {
   return createElement(

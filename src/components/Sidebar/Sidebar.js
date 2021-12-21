@@ -6,7 +6,7 @@ import foodIcon from '../../assets/icons/food-icon.svg';
 import bookmarkIcon from '../../assets/icons/bookmark-icon.svg';
 import SidebarElement from './SidebarElement';
 import { BASE_URL } from '../../config';
-import { BOOKMARKS_URL, FOOD_URL, HOME_URL } from '../../constants/routes';
+import { BOOKMARKS_URL, FOOD_URL, MENU_URL } from '../../constants/routes';
 
 const Sidebar = () => {
   let sidebarStatus = false;
@@ -15,13 +15,13 @@ const Sidebar = () => {
       name: 'Menu',
       icon: menuIcon,
       iconAlt: 'menu-icon',
-      href: '/',
+      href: '/menu',
     },
     {
       name: 'Food',
       icon: foodIcon,
       iconAlt: 'food-icon',
-      href: '/food',
+      href: '/',
     },
     {
       name: 'Bookmarks',
@@ -40,9 +40,9 @@ const Sidebar = () => {
         }
       });
     };
-    if (currentUrl === HOME_URL) {
-      addActiveClass(HOME_URL);
-    } else if ([HOME_URL, FOOD_URL].includes(currentUrl)) {
+    if (currentUrl === MENU_URL) {
+      addActiveClass(MENU_URL);
+    } else if ([MENU_URL, FOOD_URL].includes(currentUrl)) {
       addActiveClass(FOOD_URL);
     } else if (currentUrl === BOOKMARKS_URL) {
       addActiveClass(BOOKMARKS_URL);
