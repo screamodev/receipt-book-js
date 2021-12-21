@@ -34,20 +34,19 @@ const Sidebar = () => {
       iconAlt: 'menu-icon',
       isLink: false,
       onclick: toggleSidebar,
+      id: NAV_MENU_ELEMENT_BUTTON_ID,
     },
     {
       name: 'Food',
       icon: foodIcon,
       iconAlt: 'food-icon',
       href: '/',
-      isLink: true,
     },
     {
       name: 'Bookmarks',
       icon: bookmarkIcon,
       iconAlt: 'bookmark-icon',
       href: '/bookmarks',
-      isLink: true,
     },
   ];
 
