@@ -6,30 +6,48 @@ import foodIcon from '../../assets/icons/food-icon.svg';
 import bookmarkIcon from '../../assets/icons/bookmark-icon.svg';
 import SidebarElement from './SidebarElement';
 import { BASE_URL } from '../../config';
-import { BOOKMARKS_URL, FOOD_URL, MENU_URL } from '../../constants/routes';
+import { BOOKMARKS_URL, FOOD_URL } from '../../constants/routes';
 
 const Sidebar = () => {
   let sidebarStatus = false;
+
+  const toggleSidebar = () => {
+    const sidebar = document.getElementById(SIDEBAR);
+    const menuElementsButton = document.getElementById(
+      'nav-menu-element-button'
+    );
+    sidebarStatus
+      ? menuElementsButton.classList.remove('active')
+      : menuElementsButton.classList.add('active');
+
+    sidebarStatus = !sidebarStatus;
+    sidebar.style.transform = `translateX(${sidebarStatus ? 0 : -75}%)`;
+  };
+
   const sidebarItems = [
     {
       name: 'Menu',
       icon: menuIcon,
       iconAlt: 'menu-icon',
-      href: '/menu',
+      isLink: false,
+      onclick: toggleSidebar,
     },
     {
       name: 'Food',
       icon: foodIcon,
       iconAlt: 'food-icon',
       href: '/',
+      isLink: true,
     },
     {
       name: 'Bookmarks',
       icon: bookmarkIcon,
       iconAlt: 'bookmark-icon',
       href: '/bookmarks',
+      isLink: true,
     },
   ];
+
   window.onload = () => {
     const navMenuElement = document.querySelectorAll('.nav-menu-element');
     const currentUrl = window.location.pathname;
@@ -40,24 +58,16 @@ const Sidebar = () => {
         }
       });
     };
-    if (currentUrl === MENU_URL) {
-      addActiveClass(MENU_URL);
-    } else if ([MENU_URL, FOOD_URL].includes(currentUrl)) {
+    if (currentUrl === FOOD_URL) {
       addActiveClass(FOOD_URL);
     } else if (currentUrl === BOOKMARKS_URL) {
       addActiveClass(BOOKMARKS_URL);
     }
   };
 
-  const toggleSidebar = () => {
-    const sidebar = document.getElementById(SIDEBAR);
-    sidebarStatus = !sidebarStatus;
-    sidebar.style.transform = `translateX(${sidebarStatus ? 0 : -50}%)`;
-  };
-
   return createElement(
     'aside',
-    { id: SIDEBAR, onclick: toggleSidebar },
+    { id: SIDEBAR },
     createElement(
       'nav',
       { class: 'nav' },

@@ -8,6 +8,8 @@
   text-decoration: none;
   transform: translateX(3%);
   transition-duration: 300ms;
+  border: none;
+  background-color: inherit;
 
   &:hover {
     background-color: white;
