@@ -1,5 +1,6 @@
 import { createElement } from '../../libs/DOM';
-import './sidebar.scss';
+import { BASE_URL } from '../../config';
+import { BOOKMARKS_URL, FOOD_URL } from '../../constants/routes';
 import {
   NAV_MENU_ELEMENT_BUTTON_ID,
   SIDEBAR,
@@ -8,8 +9,7 @@ import menuIcon from '../../assets/icons/menu-icon.svg';
 import foodIcon from '../../assets/icons/food-icon.svg';
 import bookmarkIcon from '../../assets/icons/bookmark-icon.svg';
 import SidebarElement from './SidebarElement';
-import { BASE_URL } from '../../config';
-import { BOOKMARKS_URL, FOOD_URL } from '../../constants/routes';
+import './sidebar.scss';
 
 const Sidebar = () => {
   let sidebarStatus = false;
