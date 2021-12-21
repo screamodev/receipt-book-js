@@ -1,6 +1,9 @@
 import { createElement } from '../../libs/DOM';
 import './sidebar.scss';
-import { SIDEBAR } from '../../constants/elementSelectors';
+import {
+  NAV_MENU_ELEMENT_BUTTON_ID,
+  SIDEBAR,
+} from '../../constants/elementSelectors';
 import menuIcon from '../../assets/icons/menu-icon.svg';
 import foodIcon from '../../assets/icons/food-icon.svg';
 import bookmarkIcon from '../../assets/icons/bookmark-icon.svg';
@@ -14,7 +17,7 @@ const Sidebar = () => {
   const toggleSidebar = () => {
     const sidebar = document.getElementById(SIDEBAR);
     const menuElementsButton = document.getElementById(
-      'nav-menu-element-button'
+      NAV_MENU_ELEMENT_BUTTON_ID
     );
     sidebarStatus
       ? menuElementsButton.classList.remove('active')

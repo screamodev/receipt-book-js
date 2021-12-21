@@ -1,4 +1,5 @@
 export const SIDEBAR = 'sidebar';
+export const NAV_MENU_ELEMENT_BUTTON_ID = 'nav-menu-element-button';
 
 export const CREATE_MAIN_ID = 'main';
 export const CREATE_CONTENT_ID = 'content';

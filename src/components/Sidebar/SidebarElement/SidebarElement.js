@@ -1,8 +1,9 @@
 import { createElement } from '../../../libs/DOM';
 import './sidebarElement.scss';
+import { NAV_MENU_ELEMENT_BUTTON_ID } from '../../../constants/elementSelectors';
 
-const SidebarElement = ({ name, icon, iconAlt, href, isLink, onclick }) => {
-  return createElement(
+const SidebarElement = ({ name, icon, iconAlt, href, isLink, onclick }) =>
+  createElement(
     isLink ? 'a' : 'button',
     isLink
       ? {
@@ -11,9 +12,8 @@ const SidebarElement = ({ name, icon, iconAlt, href, isLink, onclick }) => {
           onclick,
         }
       : {
-          id: 'nav-menu-element-button',
+          id: NAV_MENU_ELEMENT_BUTTON_ID,
           class: 'nav-menu-element',
-
           onclick,
         },
     [
@@ -21,6 +21,5 @@ const SidebarElement = ({ name, icon, iconAlt, href, isLink, onclick }) => {
       createElement('img', { src: icon, alt: iconAlt }),
     ]
   );
-};
 
 export default SidebarElement;
