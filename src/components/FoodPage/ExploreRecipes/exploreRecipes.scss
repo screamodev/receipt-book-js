@@ -1,0 +1,14 @@
+@import './src/assets/scss/variables';
+
+#explore-recipes {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .explore-recipes-title {
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 44px;
+    color: $additional-1-600;
+  }
+}
