@@ -1,0 +1,10 @@
+#food-page {
+  display: flex;
+  flex-direction: column;
+  padding: 0 30px;
+  overflow: hidden;
+
+  @media screen and (max-width: 1500px) {
+    margin-bottom: 50px;
+  }
+}
