@@ -1,4 +1,4 @@
-@import './src/assets/scss/variables';
+@import '../../../../../assets/scss/variables';
 
 .recipe-card {
   cursor: pointer;
@@ -9,8 +9,9 @@
   overflow: hidden;
   position: relative;
   transition-duration: 200ms;
-  @media screen and (max-width: 1580px) {
-    margin: 22px 0 22px 0;
+
+  @media screen and (max-width: 1500px) {
+    margin: 22px 22px 22px 0;
   }
 
   &:hover {

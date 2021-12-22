@@ -1,10 +1,10 @@
-import { createElement, mount } from '../../../libs/DOM';
-import './recipeCard.scss';
-import RecipeInfo from '../../RecipeInfo/RecipeInfo';
+import { createElement, mount } from '../../../../../libs/DOM';
 import {
   CREATE_CONTENT_ID,
   CREATE_RECIPE_INFO_WRAPPER,
-} from '../../../constants/elementSelectors';
+} from '../../../../../constants/elementSelectors';
+import RecipeInfo from '../../../../RecipeInfo/RecipeInfo';
+import './recipeCard.scss';
 
 const RecipeCard = ({ name, description, categories, ingredients, imgUrl }) => {
   const showRecipeInfo = () => {
