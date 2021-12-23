@@ -1,19 +1,19 @@
 import { createElement, mount } from '../../../../../libs/DOM';
 import {
-  CREATE_CONTENT_ID,
-  CREATE_RECIPE_INFO_WRAPPER,
+  CONTENT_ID,
+  RECIPE_INFO_WRAPPER,
 } from '../../../../../constants/elementSelectors';
 import RecipeInfo from '../../../../RecipeInfo/RecipeInfo';
 import './recipeCard.scss';
 
 const RecipeCard = ({ name, description, categories, ingredients, imgUrl }) => {
   const showRecipeInfo = () => {
-    const recipeInfo = document.getElementById(CREATE_RECIPE_INFO_WRAPPER);
+    const recipeInfo = document.getElementById(RECIPE_INFO_WRAPPER);
     if (recipeInfo) {
       recipeInfo.remove();
     }
     mount(
-      document.getElementById(CREATE_CONTENT_ID),
+      document.getElementById(CONTENT_ID),
       RecipeInfo({ name, description, ingredients, imgUrl })
     );
   };

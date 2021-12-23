@@ -1,10 +1,10 @@
 import { createElement } from '../../../libs/DOM';
 import './Header.scss';
-import { CREATE_RECIPE_MODAL_ID } from '../../../constants/elementSelectors';
+import { RECIPE_MODAL_ID } from '../../../constants/elementSelectors';
 
 const Header = () => {
   const openModal = () => {
-    document.getElementById(CREATE_RECIPE_MODAL_ID).style.display = 'block';
+    document.getElementById(RECIPE_MODAL_ID).style.display = 'block';
   };
 
   return createElement('div', { class: 'food-page-header' }, [

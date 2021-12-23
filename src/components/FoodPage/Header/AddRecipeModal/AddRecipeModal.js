@@ -1,10 +1,10 @@
 import { createElement, mount } from '../../../../libs/DOM';
 import { addRecipe, fetchRecipe } from '../../../../api/recipesApi';
 import {
-  CREATE_RECIPE_FORM_INGREDIENT_HOLDER_CLASS,
-  CREATE_RECIPE_FORM_INGREDIENT_LIST_ID,
-  CREATE_RECIPE_MODAL_ID,
-  CREATE_RECIPES_CARDS_ID,
+  RECIPE_FORM_INGREDIENT_HOLDER_CLASS,
+  RECIPE_FORM_INGREDIENT_LIST_ID,
+  RECIPE_MODAL_ID,
+  RECIPES_CARDS_ID,
 } from '../../../../constants/elementSelectors';
 import IngredientInputs from './IngredientInputs';
 import FormInput from '../../../common/FormInput';
@@ -14,7 +14,7 @@ import './addRecipeModal.scss';
 
 const AddRecipeModal = () => {
   const closeModal = () => {
-    const modal = document.getElementById(CREATE_RECIPE_MODAL_ID);
+    const modal = document.getElementById(RECIPE_MODAL_ID);
     modal.style.display = 'none';
   };
 
@@ -22,7 +22,7 @@ const AddRecipeModal = () => {
     e.preventDefault();
 
     mount(
-      document.getElementById(CREATE_RECIPE_FORM_INGREDIENT_LIST_ID),
+      document.getElementById(RECIPE_FORM_INGREDIENT_LIST_ID),
       IngredientInputs()
     );
   };
@@ -49,12 +49,12 @@ const AddRecipeModal = () => {
     addRecipe(recipe).then(({ id }) => {
       fetchRecipe(id).then((recipeResponse) => {
         mount(
-          document.getElementById(CREATE_RECIPES_CARDS_ID),
+          document.getElementById(RECIPES_CARDS_ID),
           RecipeCard(recipeResponse)
         );
       });
     });
-    const modal = document.getElementById(CREATE_RECIPE_MODAL_ID);
+    const modal = document.getElementById(RECIPE_MODAL_ID);
     modal.style.display = 'none';
     createRecipeForm.reset();
   };
@@ -107,7 +107,7 @@ const AddRecipeModal = () => {
             createElement(
               'div',
               {
-                class: CREATE_RECIPE_FORM_INGREDIENT_HOLDER_CLASS,
+                class: RECIPE_FORM_INGREDIENT_HOLDER_CLASS,
               },
               [
                 createElement(
