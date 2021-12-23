@@ -3,7 +3,7 @@ import {
   CONTENT_ID,
   RECIPE_INFO_WRAPPER,
 } from '../../../../../constants/elementSelectors';
-import RecipeInfo from '../../../../RecipeInfo/RecipeInfo';
+import RecipeInfo from '../../../../RecipeInfo';
 import './recipeCard.scss';
 
 const RecipeCard = ({ name, description, categories, ingredients, imgUrl }) => {
