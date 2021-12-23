@@ -22,6 +22,7 @@
     position: relative;
     border-bottom: 3px solid white;
     transition-duration: 500ms;
+    cursor: pointer;
 
     &:hover {
       border-bottom: 3px solid $secondary-600;

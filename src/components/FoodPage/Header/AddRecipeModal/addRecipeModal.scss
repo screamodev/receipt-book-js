@@ -75,6 +75,7 @@
       font-weight: 600;
       transition-duration: 100ms;
       border: none;
+      cursor: pointer;
 
       &::before {
         content: '+ ';
@@ -100,6 +101,8 @@
       position: relative;
       overflow: hidden;
       z-index: 1;
+      cursor: pointer;
+
       &:after {
         content: '';
         position: absolute;
