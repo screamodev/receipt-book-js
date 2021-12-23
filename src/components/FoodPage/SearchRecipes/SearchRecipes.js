@@ -1,12 +1,12 @@
 import { createElement, mount } from '../../../libs/DOM';
 import './searchRecipes.scss';
 import { searchRecipes } from '../../../api/recipesApi';
-import RecipeCards from '../RecipeCards';
 import {
   SEARCH_INPUT,
   SEARCH_RECIPES_CARDS,
 } from '../../../constants/elementSelectors';
 import { ENTER_KEY } from '../../../constants/keyCodes';
+import RecipeCards from '../ExploreRecipes/RecipeCards';
 
 const SearchRecipes = () => {
   const handleKeyPress = (e) => {
@@ -22,7 +22,7 @@ const SearchRecipes = () => {
     }
   };
 
-  return createElement('div', { class: 'search-recipes-holder' }, [
+  return createElement('div', { id: 'search-recipes-holder' }, [
     createElement('input', {
       id: SEARCH_INPUT,
       placeholder: 'Search',

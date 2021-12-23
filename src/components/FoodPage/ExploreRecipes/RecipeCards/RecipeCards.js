@@ -1,5 +1,5 @@
-import { createElement } from '../../../libs/DOM';
-import RecipeCard from '../RecipeCard';
+import { createElement } from '../../../../libs/DOM';
+import RecipeCard from './RecipeCard';
 import './recipeCards.scss';
 
 const RecipeCards = ({ recipes }) =>
