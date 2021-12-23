@@ -1,6 +1,6 @@
 import { createElement } from '../../libs/DOM';
 import './recipeInfo.scss';
-import ingredientIcon from '../../assets/icons/Food-Cutlery-icon.png';
+import ingredientIcon from '../../assets/icons/ingredient-icon.png';
 
 const RecipeInfo = ({ name, description, ingredients, imgUrl }) =>
   createElement(
