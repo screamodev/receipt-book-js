@@ -1,42 +1,51 @@
-#search-recipes {
+#search-recipes-holder {
   margin-top: 30px;
   margin-bottom: 22px;
   width: 100%;
 
-  .search-recipes-holder {
-    #search-input {
-      text-transform: uppercase;
-      font-size: 36px;
-      margin-bottom: 40px;
-      line-height: 44px;
-      outline: none;
-      border: none;
-      opacity: 70%;
-      color: #00000000;
-      font-weight: normal;
-      margin-bottom: 22px;
+  #search-input {
+    text-transform: uppercase;
+    font-size: 36px;
+    margin-bottom: 40px;
+    line-height: 44px;
+    outline: none;
+    border: none;
+    opacity: 0.7;
+    color: #00000000;
+    font-weight: normal;
+    margin-bottom: 22px;
 
-      &:focus {
-        opacity: 1;
-        color: #0000004d;
-      }
+    &:focus {
+      opacity: 1;
+      color: #0000004d;
     }
 
-    #search-input::-webkit-input-placeholder {
-      color: black;
-      opacity: 30%;
-      &:focus {
-        opacity: 1;
-        color: #0000004d;
-      }
+    &:not(:focus) {
+      opacity: 0.7;
+      color: #0000004d;
+    }
+  }
+
+  #search-input::-webkit-input-placeholder {
+    color: black;
+    opacity: 30%;
+
+    &:focus {
+      opacity: 1;
+      color: #0000004d;
     }
 
-    #search-recipes-cards {
-      display: flex;
-      flex-wrap: wrap;
-      @media screen and (max-width: 1580px) {
-        justify-content: space-between;
-      }
+    &:not(:focus) {
+      opacity: 0.7;
+      color: #0000004d;
+    }
+  }
+
+  #search-recipes-cards {
+    display: flex;
+    flex-wrap: wrap;
+    @media screen and (max-width: 1580px) {
+      justify-content: space-between;
     }
   }
 }

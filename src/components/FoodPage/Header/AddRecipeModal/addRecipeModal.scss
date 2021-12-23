@@ -13,7 +13,7 @@
 
   .add-recipe-modal-window-content {
     background-color: $secondary-300;
-    margin: 15% auto;
+    margin: 5% auto;
     padding: 20px;
     border-radius: 30px;
     border: 2px solid grey;
@@ -75,6 +75,7 @@
       font-weight: 600;
       transition-duration: 100ms;
       border: none;
+      cursor: pointer;
 
       &::before {
         content: '+ ';
@@ -100,6 +101,8 @@
       position: relative;
       overflow: hidden;
       z-index: 1;
+      cursor: pointer;
+
       &:after {
         content: '';
         position: absolute;
@@ -116,7 +119,6 @@
         position: absolute;
         bottom: 0;
         left: 0;
-        width: 0%;
         height: 100%;
         background-color: darken($primary-400, 15%);
         transition: all 0.3s;
