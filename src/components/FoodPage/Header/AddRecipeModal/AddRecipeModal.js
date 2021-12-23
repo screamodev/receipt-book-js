@@ -1,8 +1,4 @@
 import { createElement, mount } from '../../../../libs/DOM';
-import IngredientInputs from './IngredientInputs';
-import './addRecipeModal.scss';
-import FormInput from '../../../common/FormInput';
-import FormTextarea from '../../../common/FormTextarea';
 import { addRecipe, fetchRecipe } from '../../../../api/recipesApi';
 import {
   CREATE_RECIPE_FORM_INGREDIENT_HOLDER_CLASS,
@@ -10,7 +6,11 @@ import {
   CREATE_RECIPE_MODAL_ID,
   CREATE_RECIPES_CARDS_ID,
 } from '../../../../constants/elementSelectors';
-import RecipeCard from '../../RecipeCard';
+import IngredientInputs from './IngredientInputs';
+import FormInput from '../../../common/FormInput';
+import FormTextarea from '../../../common/FormTextarea';
+import RecipeCard from '../../ExploreRecipes/RecipeCards/RecipeCard';
+import './addRecipeModal.scss';
 
 const AddRecipeModal = () => {
   const closeModal = () => {
