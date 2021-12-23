@@ -9,7 +9,7 @@ const ExploreRecipes = () => {
     mount(document.getElementById(EXPLORE_RECIPES_ID), RecipeCards({ recipes }))
   );
 
-  return createElement('div', { id: 'explore-recipes' }, [
+  return createElement('div', { id: EXPLORE_RECIPES_ID }, [
     createElement('h1', { class: 'explore-recipes-title' }, 'Explore recipes'),
   ]);
 };
