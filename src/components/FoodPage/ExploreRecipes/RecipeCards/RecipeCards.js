@@ -6,7 +6,6 @@ const RecipeCards = ({ recipes }) =>
   createElement(
     'div',
     { id: 'recipes-cards' },
-
     recipes.map((recipe) => RecipeCard(recipe))
   );
 
