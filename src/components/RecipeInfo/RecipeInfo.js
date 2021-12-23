@@ -1,6 +1,6 @@
 import { createElement } from '../../libs/DOM';
 import './recipeInfo.scss';
-import ingredientIcon from '../../assets/icons/ingredient-icon.png';
+import Ingredient from './Ingredient/Ingredient';
 
 const RecipeInfo = ({ name, description, ingredients, imgUrl }) =>
   createElement(
@@ -49,38 +49,7 @@ const RecipeInfo = ({ name, description, ingredients, imgUrl }) =>
               },
               ingredients.map(
                 ({ name: ingredientName, weight: ingredientWeight }) =>
-                  createElement(
-                    'div',
-                    {
-                      class: 'ingredient-item',
-                    },
-                    [
-                      createElement(
-                        'div',
-                        {
-                          class: 'ingredient-item-image',
-                        },
-                        createElement('img', {
-                          src: ingredientIcon,
-                          alt: 'dish',
-                        })
-                      ),
-                      createElement(
-                        'span',
-                        {
-                          class: 'ingredient-item-name',
-                        },
-                        ingredientName
-                      ),
-                      createElement(
-                        'span',
-                        {
-                          class: 'ingredient-item-pcs',
-                        },
-                        ingredientWeight
-                      ),
-                    ]
-                  )
+                  Ingredient(ingredientName, ingredientWeight)
               )
             ),
           ]

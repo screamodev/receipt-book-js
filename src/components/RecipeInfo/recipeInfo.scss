@@ -48,26 +48,6 @@
         line-height: 21.94px;
         color: rgba(0, 0, 0, 1);
       }
-
-      .recipe-ingredients {
-        .ingredient-item {
-          margin: 15px 0;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-
-          .ingredient-item-name {
-            margin-right: 40%;
-          }
-
-          .ingredient-item-image {
-            img {
-              height: 50px;
-              width: 50px;
-            }
-          }
-        }
-      }
     }
   }
 
