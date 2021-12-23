@@ -1,6 +1,6 @@
 import { createElement } from '../../../libs/DOM';
-import './ingredient.scss';
 import ingredientIcon from '../../../assets/icons/ingredient-icon.png';
+import './ingredient.scss';
 
 const Ingredient = (ingredientName, ingredientWeight) =>
   createElement(

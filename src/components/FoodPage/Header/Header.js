@@ -1,6 +1,6 @@
 import { createElement } from '../../../libs/DOM';
-import './Header.scss';
 import { RECIPE_MODAL_ID } from '../../../constants/elementSelectors';
+import './Header.scss';
 
 const Header = () => {
   const openModal = () => {

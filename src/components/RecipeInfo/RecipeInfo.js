@@ -1,6 +1,6 @@
 import { createElement } from '../../libs/DOM';
-import './recipeInfo.scss';
 import Ingredient from './Ingredient';
+import './recipeInfo.scss';
 
 const RecipeInfo = ({ name, description, ingredients, imgUrl }) =>
   createElement(
