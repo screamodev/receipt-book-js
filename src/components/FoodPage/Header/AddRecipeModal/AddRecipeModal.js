@@ -135,7 +135,7 @@ const AddRecipeModal = () => {
             createElement(
               'button',
               { class: 'add-recipe-form-button', type: 'submit' },
-              'Submit'
+              'Create'
             ),
           ]
         ),
