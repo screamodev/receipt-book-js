@@ -39,7 +39,10 @@ const AddRecipeModal = () => {
     const recipe = {
       name: createRecipeFormData.get('name'),
       description: createRecipeFormData.get('description'),
-      categories: createRecipeFormData.get('categories').split(','),
+      categories: createRecipeFormData
+        .get('categories')
+        .split(',')
+        .filter((word) => !!word),
       ingredients: ingredientNames.map((name, index) => ({
         name,
         weight: ingredientPCs[index],
