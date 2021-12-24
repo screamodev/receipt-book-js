@@ -22,7 +22,7 @@ const SearchRecipes = () => {
       searchRecipes(searchInput.value).then((recipes) =>
         mount(
           searchRecipesCardsHolder,
-          RecipeCards(SEARCH_RECIPES_CARDS, { recipes })
+          RecipeCards({ id: SEARCH_RECIPES_CARDS, recipes })
         )
       );
     }
