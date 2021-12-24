@@ -6,7 +6,10 @@ import './exploreRecipes.scss';
 
 const ExploreRecipes = () => {
   fetchRecipes().then((recipes) =>
-    mount(document.getElementById(EXPLORE_RECIPES_ID), RecipeCards({ recipes }))
+    mount(
+      document.getElementById(EXPLORE_RECIPES_ID),
+      RecipeCards('recipes-cards', { recipes })
+    )
   );
 
   return createElement('div', { id: EXPLORE_RECIPES_ID }, [
